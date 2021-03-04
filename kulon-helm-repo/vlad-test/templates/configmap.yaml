@@ -4,6 +4,7 @@ metadata:
   name: {{ .Release.Name }}-configmap
 data:
   application.properties: |-
+    greeting=Hello World
 {{- range $key, $val := .Values.configmap }}
 {{ $key | indent 4}}={{ $val }}
 {{- end}}
